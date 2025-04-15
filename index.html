@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arya Shah | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <div class="hero">
+    <!-- Add multiple star layers for depth -->
+    <div class="stars-1"></div>
+    <div class="stars-2"></div>
+    <div class="stars-3"></div>
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="name-container">
+        <h1 class="glitch-text">Arya Shah</h1>
+        <div class="glitch-effect"></div>
+      </div>
+      <h2 class="title">Web Developer</h2>
+      <p class="tagline">Bring the chaos to your competition.</p>
+      <div class="typing-effect"></div>
+      <a href="#" class="cta-button" id="portfolio-btn">
+        <span class="button-text">EXPLORE MY UNIVERSE</span>
+        <div class="button-glow"></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="portfolio-container">
+    <nav class="portfolio-nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Hello! I'm Arya Shah, a passionate web developer with a knack for creating stunning digital experiences. With a strong foundation in modern web technologies and a creative mindset, I specialize in building responsive, user-friendly websites and applications. My mission is to bring ideas to life through code and design, ensuring every project is both functional and visually appealing.</p>
+      <p>When I'm not coding, you can find me exploring new design trends, learning about emerging technologies, or enjoying a good book. Let's create something amazing together!</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <!-- Add your content -->
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <!-- Add your content -->
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <!-- Add your content -->
+    </section>
+  </div>
+
+  <script>
+    const phrases = [
+      "Digital experiences that matter.",
+      "Where code meets creativity.",
+      "Pushing pixels to perfection."
+    ];
+    
+    let currentPhraseIndex = 0;
+    const typingEffect = document.querySelector(".typing-effect");
+    
+    function typeText(text, element) {
+      let index = 0;
+      element.textContent = "";
+      
+      function type() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 50);
+        } else {
+          setTimeout(erase, 2000);
+        }
+      }
+      
+      function erase() {
+        if (element.textContent.length > 0) {
+          element.textContent = element.textContent.slice(0, -1);
+          setTimeout(erase, 30);
+        } else {
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          setTimeout(() => typeText(phrases[currentPhraseIndex], element), 500);
+        }
+      }
+      
+      type();
+    }
+
+    typeText(phrases[0], typingEffect);
+
+    // Replace the existing portfolio-btn click handler
+    document.getElementById('portfolio-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const hero = document.querySelector('.hero');
+        const portfolioContainer = document.querySelector('.portfolio-container');
+        
+        // Update URL without page reload
+        window.history.pushState({page: 'portfolio'}, '', '/portfolio');
+        
+        // Fade out hero section
+        hero.classList.add('fade-out');
+        
+        setTimeout(() => {
+            hero.style.display = 'none';
+            portfolioContainer.style.display = 'block';
+            
+            // Force browser reflow
+            void portfolioContainer.offsetWidth;
+            
+            // Fade in portfolio
+            portfolioContainer.classList.add('fade-in');
+            
+            // Smooth scroll to About section
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+    });
+
+    // Add history navigation handler
+    window.addEventListener('popstate', function(e) {
+        const hero = document.querySelector('.hero');
+        const portfolioContainer = document.querySelector('.portfolio-container');
+        
+        if (window.location.pathname === '/') {
+            portfolioContainer.classList.remove('fade-in');
+            setTimeout(() => {
+                portfolioContainer.style.display = 'none';
+                hero.style.display = 'block';
+                hero.classList.remove('fade-out');
+            }, 500);
+        }
+    });
+
+    document.body.style.transition = 'opacity 0.5s ease';
+    document.body.style.opacity = 1;
+  </script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
