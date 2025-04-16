@@ -276,10 +276,27 @@
 
 /* Footer */
 .footer {
-  padding: 1rem 0;
+  padding: 20px 0;
   background: rgba(10, 10, 10, 0.95);
   text-align: center;
-  color: #e0e0e0;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+.footer-icons a {
+  color: #ffffff;
+  font-size: 1.5rem; /* Icon size */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #ff6b6b; /* Hover color */
+  transform: scale(1.2); /* Slight zoom effect on hover */
 }
 
 .footer p {
@@ -452,4 +469,48 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Explore Container */
+.explore-container {
+  text-align: center;
+  margin-bottom: 0; /* Remove excessive space below the container */
+}
+
+.explore-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: transparent;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  background: #ff6b6b;
+  color: #ffffff;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 10px; /* Reduced space between the button and icons */
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.5rem; /* Icon size */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff6b6b; /* Hover color */
+  transform: scale(1.2); /* Slight zoom effect on hover */
 }
