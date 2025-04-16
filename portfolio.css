@@ -8,6 +8,158 @@
     background: rgba(10, 10, 10, 0.95);
 }
 
+/* Remove extra space at the top */
+.portfolio-pages {
+    padding-top: 0; /* Remove unnecessary padding */
+    margin-top: 0; /* Ensure no margin is added */
+}
+
+/* General Section Styling */
+.section {
+    padding: 4rem 2rem; /* Adjusted padding to reduce extra space */
+    margin: 0; /* Ensure no extra margin is added */
+    min-height: 100vh; /* Ensure sections take up full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.95);
+}
+
+/* Section Heading with Sparkle Line */
+.section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  text-align: center;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 100px; /* Consistent width for all sections */
+  height: 4px; /* Consistent height for all sections */
+  background: #ff6b6b;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b; /* Consistent glow effect */
+  animation: sparkle 1.5s infinite alternate; /* Consistent animation */
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  background: rgba(10, 10, 10, 0.95);
+  color: #ffffff;
+}
+
+#about h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.about-content {
+  max-width: 800px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.about-content h3 {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-content ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.about-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.portfolio-page {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+.portfolio-page.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Portfolio Navigation Styling */
+.portfolio-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    margin: 0; /* Ensure no margin is added */
+    padding: 1rem 0; /* Adjust padding for better spacing */
+}
+
+.portfolio-nav a.active {
+    color: #ff6b6b;
+    position: relative;
+}
+
+.portfolio-nav a.active::after {
+    transform: scaleX(1);
+}
+
 .section h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
@@ -27,26 +179,175 @@
     margin-bottom: 1.5rem;
 }
 
-/* Skills section */
-#skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-/* Projects section */
+/* Projects Section */
 #projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  background: rgba(10, 10, 10, 0.95);
+  color: #ffffff;
 }
 
-/* Contact section */
+#projects h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Titles */
+.project-card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #ff6b6b; /* Updated color for project titles */
+  font-weight: 700; /* Optional: Make the title bold for better emphasis */
+  text-align: center; /* Optional: Center-align the titles */
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.project-icon {
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.view-project-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff6b6b;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.view-project-btn:hover {
+  background: #e05555;
+}
+
+/* View All Projects Button */
+.view-all-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff6b6b;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background: #e05555;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem 0;
+  background: rgba(10, 10, 10, 0.95);
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.footer p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ff6b6b;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ff6b6b;
+}
+
+/* Contact Section Styling */
 #contact {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem; /* Reduced padding for better spacing */
+    margin: 0 auto; /* Center the content */
+    background: rgba(10, 10, 10, 0.95);
+    color: #e0e0e0;
+}
+
+#contact h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#contact p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#contact ul li a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Animation for section visibility */
@@ -59,4 +360,96 @@
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Skills Section */
+#skills {
+  min-height: calc(100vh - 80px); /* Adjust for header height (replace 80px with actual header height) */
+  padding: 30px 20px; /* Reduced padding for top and bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;
+  background: rgba(10, 10, 10, 0.95);
+  color: #ffffff;
+}
+
+/* Skills Heading */
+#skills .section-heading {
+  margin-top: 0; /* Remove excessive space above */
+  margin-bottom: 30px; /* Position closer to the skills grid */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  text-align: center;
+}
+
+#skills .section-heading::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #ff6b6b;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b;
+}
+
+/* Skills Container */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 15px; /* Reduced gap between skill cards */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid horizontally */
+}
+
+/* Skills Card */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px; /* Reduced padding inside cards */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ff6b6b;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card ul li i {
+  margin-right: 10px;
+  color: #ff6b6b;
+}
+
+/* Main Content Area */
+.main-content {
+  min-height: calc(100vh - 80px - 50px); /* Adjust for header and footer heights */
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

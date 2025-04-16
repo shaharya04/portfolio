@@ -1,0 +1,486 @@
+/* Reset and Base Styles */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+  cursor: default;
+}
+
+/* Hero Section */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Choose one of these high-impact tech backgrounds */
+  background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
+  /* Alternative options:
+    Option 1 - AI Network:
+    background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
+    
+    Option 2 - Digital Grid:
+    background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
+    
+    Option 3 - Tech Circuit:
+    background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
+    */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Enhanced stars effect */
+
+.stars-1, .stars-2, .stars-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  z-index: 1;
+}
+
+.stars-1 {
+  background-image: 
+        radial-gradient(2px 2px at 50px 50px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 100px 150px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 200px 200px, #ffffff, rgba(0,0,0,0));
+  animation: twinkle 4s infinite;
+}
+
+.stars-2 {
+  background-image: 
+        radial-gradient(2px 2px at 150px 50px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 250px 250px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 300px 100px, #ffffff, rgba(0,0,0,0));
+  animation: twinkle 4s infinite 1s;
+}
+
+.stars-3 {
+  background-image: 
+        radial-gradient(2px 2px at 350px 150px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 400px 250px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 450px 350px, #ffffff, rgba(0,0,0,0));
+  animation: twinkle 4s infinite 2s;
+}
+
+/* Enhance overlay for better contrast and mood */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(255, 107, 107, 0.2) 100%
+    ),
+    radial-gradient(
+        circle at top right,
+        rgba(255, 152, 0, 0.2),
+        rgba(0, 0, 0, 0.8) 70%
+    );
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: contentEntry 1.5s ease-out;
+  padding: 4rem;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid rgba(255,107,107,0.2);
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 50px rgba(255,107,107,0.05);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.name-container {
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.glitch-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 8rem;
+  margin: 0 auto;
+  display: block;
+  position: static;
+  transform: none;
+  background: linear-gradient(45deg, #fff 0%, #ff6b6b 30%, #ff9800 70%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(255,107,107,0.3));
+  animation: none;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.glitch-text:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  background: linear-gradient(45deg, #ff9800, #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  animation: slideIn 1s ease-out;
+  text-shadow: 0 0 10px rgba(255,152,0,0.5);
+}
+
+/* Adjusted text colors for better visibility */
+
+.tagline {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  color: #ffffff;
+  /* Changed from light gray to pure white for better contrast */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Adjusted text colors for better visibility */
+
+.typing-effect {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.2rem;
+  min-height: 2.5rem;
+  margin: 2rem 0;
+  color: #ffcccb;
+  /* Lightened the red color for better readability */
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255,107,107,0.4);
+}
+
+.cta-button {
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(255, 107, 107, 0.1);
+  border: 2px solid rgba(255, 107, 107, 0.3);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  color: #ff9800;
+  border-color: #ff9800;
+  text-shadow: 0 0 20px rgba(255,152,0,0.4);
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.portfolio-container {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  overflow-y: auto;
+}
+
+/* Adjusted text colors for better visibility */
+
+.portfolio-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(10, 10, 10, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+/* Adjusted text colors for better visibility */
+
+.portfolio-nav a {
+  color: #e0e0e0;
+  /* Adjusted to a lighter gray for better contrast */
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.portfolio-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff6b6b;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Adjusted text colors for better visibility */
+
+.portfolio-nav a:hover {
+  color: #ff9999;
+  /* Lightened hover color for better visibility */
+}
+
+.section {
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section.visible {
+  animation: sectionFadeIn 1s ease-out forwards, slideInFadeUp 1s ease-out forwards;
+}
+
+/* About Section Styling */
+
+#about {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 3rem;
+  margin: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.1);
+  max-width: 800px;
+  width: 90%;
+  margin: 4rem auto;
+  animation: slideInFadeUp 1s ease-out;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+#about h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+  position: relative;
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+#about h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
+}
+
+#about p {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced twinkle animation */
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes sectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem;
+  }
+
+  .glitch-text {
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+
+  .tagline {
+    font-size: 1.6rem;
+  }
+
+  .typing-effect {
+    font-size: 1.8rem;
+  }
+
+  .cta-button {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 1.5rem;
+  }
+
+  .glitch-text {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+  }
+
+  .typing-effect {
+    font-size: 1.6rem;
+  }
+}
