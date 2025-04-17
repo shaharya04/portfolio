@@ -147,3 +147,12 @@ handleInitialNavigation();
 
 // Handle browser back/forward
 window.addEventListener('popstate', handleInitialNavigation);
+
+// Ensure this script is included in your HTML or JavaScript file
+document.addEventListener('mousemove', (e) => {
+  const cursor = document.querySelector('.cursor-glow');
+  if (cursor) {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  }
+});

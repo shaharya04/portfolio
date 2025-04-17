@@ -1,3 +1,19 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d1117; /* Dark background for better visibility */
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Glow Effect */
+
+
 /* Reset and Base Styles */
 body, html {
     margin: 0;
@@ -297,7 +313,7 @@ body, html {
 
 /* About Section Styling */
 #about {
-    background: rgba(20, 20, 20, 0.95);
+    background:0 0 30pxrgba(255, 107, 107, 0.1);
     padding: 3rem;
     margin: 2rem;
     border-radius: 15px;
@@ -306,7 +322,7 @@ body, html {
     width: 90%;
     margin: 4rem auto;
     animation: slideInFadeUp 1s ease-out;
-    border: 1px solid rgba(255, 107, 107, 0.2);
+    /* border: 1px solid rgba(255, 107, 107, 0.2); */
 }
 
 #about h2 {
