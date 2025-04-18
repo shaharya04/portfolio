@@ -1,21 +1,23 @@
 /* General Styles */
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0d1117; /* Dark background for better visibility */
-  overflow: hidden;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d1117;
+    /* Dark background for better visibility */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 /* Glow Effect */
 
 
 /* Reset and Base Styles */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -31,7 +33,7 @@ body, html {
     height: 100vh;
     /* Choose one of these high-impact tech backgrounds */
     background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
-    
+
     /* Alternative options:
     Option 1 - AI Network:
     background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1920&q=100') no-repeat center center/cover;
@@ -51,7 +53,9 @@ body, html {
 }
 
 /* Enhanced stars effect */
-.stars-1, .stars-2, .stars-3 {
+.stars-1,
+.stars-2,
+.stars-3 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -61,26 +65,26 @@ body, html {
 }
 
 .stars-1 {
-    background-image: 
-        radial-gradient(2px 2px at 50px 50px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 100px 150px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 200px 200px, #ffffff, rgba(0,0,0,0));
+    background-image:
+        radial-gradient(2px 2px at 50px 50px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 100px 150px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(3px 3px at 200px 200px, #ffffff, rgba(0, 0, 0, 0));
     animation: twinkle 4s infinite;
 }
 
 .stars-2 {
-    background-image: 
-        radial-gradient(2px 2px at 150px 50px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 250px 250px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 300px 100px, #ffffff, rgba(0,0,0,0));
+    background-image:
+        radial-gradient(2px 2px at 150px 50px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 250px 250px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 300px 100px, #ffffff, rgba(0, 0, 0, 0));
     animation: twinkle 4s infinite 1s;
 }
 
 .stars-3 {
-    background-image: 
-        radial-gradient(2px 2px at 350px 150px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 400px 250px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 450px 350px, #ffffff, rgba(0,0,0,0));
+    background-image:
+        radial-gradient(2px 2px at 350px 150px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(2px 2px at 400px 250px, #ffffff, rgba(0, 0, 0, 0)),
+        radial-gradient(3px 3px at 450px 350px, #ffffff, rgba(0, 0, 0, 0));
     animation: twinkle 4s infinite 2s;
 }
 
@@ -91,17 +95,13 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.7) 50%,
-        rgba(255, 107, 107, 0.2) 100%
-    ),
-    radial-gradient(
-        circle at top right,
-        rgba(255, 152, 0, 0.2),
-        rgba(0, 0, 0, 0.8) 70%
-    );
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(255, 107, 107, 0.2) 100%),
+        radial-gradient(circle at top right,
+            rgba(255, 152, 0, 0.2),
+            rgba(0, 0, 0, 0.8) 70%);
     z-index: 2;
 }
 
@@ -115,9 +115,9 @@ body, html {
     padding: 4rem;
     text-align: center;
     width: fit-content;
-    border: 2px solid rgba(255,107,107,0.2);
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 50px rgba(255,107,107,0.05);
+    border: 2px solid rgba(255, 107, 107, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 50px rgba(255, 107, 107, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 20px;
 }
@@ -139,7 +139,7 @@ body, html {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(255,107,107,0.3));
+    filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.3));
     animation: none;
     letter-spacing: 2px;
     transition: transform 0.3s ease;
@@ -161,7 +161,7 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 8px;
     animation: slideIn 1s ease-out;
-    text-shadow: 0 0 10px rgba(255,152,0,0.5);
+    text-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
 }
 
 /* Adjusted text colors for better visibility */
@@ -170,7 +170,8 @@ body, html {
     font-size: 2rem;
     font-weight: 700;
     margin: 2rem 0;
-    color: #ffffff; /* Changed from light gray to pure white for better contrast */
+    color: #ffffff;
+    /* Changed from light gray to pure white for better contrast */
     text-transform: uppercase;
     letter-spacing: 3px;
     animation: fadeInUp 1.2s ease-out;
@@ -182,9 +183,10 @@ body, html {
     font-size: 2.2rem;
     min-height: 2.5rem;
     margin: 2rem 0;
-    color: #ffcccb; /* Lightened the red color for better readability */
+    color: #ffcccb;
+    /* Lightened the red color for better readability */
     font-weight: bold;
-    text-shadow: 0 0 15px rgba(255,107,107,0.4);
+    text-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
 }
 
 .cta-button {
@@ -209,7 +211,7 @@ body, html {
     transform: translateY(-3px);
     color: #ff9800;
     border-color: #ff9800;
-    text-shadow: 0 0 20px rgba(255,152,0,0.4);
+    text-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
     background: rgba(255, 152, 0, 0.1);
 }
 
@@ -261,7 +263,8 @@ body, html {
 
 /* Adjusted text colors for better visibility */
 .portfolio-nav a {
-    color: #e0e0e0; /* Adjusted to a lighter gray for better contrast */
+    color: #e0e0e0;
+    /* Adjusted to a lighter gray for better contrast */
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
@@ -294,7 +297,8 @@ body, html {
 
 /* Adjusted text colors for better visibility */
 .portfolio-nav a:hover {
-    color: #ff9999; /* Lightened hover color for better visibility */
+    color: #ff9999;
+    /* Lightened hover color for better visibility */
 }
 
 .section {
@@ -313,7 +317,7 @@ body, html {
 
 /* About Section Styling */
 #about {
-    background:0 0 30pxrgba(255, 107, 107, 0.1);
+    background: rgba(255, 107, 107, 0.);
     padding: 3rem;
     margin: 2rem;
     border-radius: 15px;
@@ -360,27 +364,62 @@ body, html {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Enhanced twinkle animation */
 @keyframes twinkle {
-    0% { opacity: 0.1; }
-    25% { opacity: 0.3; }
-    50% { opacity: 0.5; }
-    75% { opacity: 0.3; }
-    100% { opacity: 0.1; }
+    0% {
+        opacity: 0.1;
+    }
+
+    25% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
 }
 
 @keyframes sectionFadeIn {
@@ -395,6 +434,7 @@ body, html {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -412,14 +452,27 @@ body, html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .content { padding: 2rem; }
-    .glitch-text { font-size: 4rem; }
-    .title { 
+    .content {
+        padding: 2rem;
+    }
+
+    .glitch-text {
+        font-size: 4rem;
+    }
+
+    .title {
         font-size: 1.8rem;
         letter-spacing: 4px;
     }
-    .tagline { font-size: 1.6rem; }
-    .typing-effect { font-size: 1.8rem; }
+
+    .tagline {
+        font-size: 1.6rem;
+    }
+
+    .typing-effect {
+        font-size: 1.8rem;
+    }
+
     .cta-button {
         padding: 1.2rem 2.4rem;
         font-size: 1.2rem;
@@ -427,12 +480,24 @@ body, html {
 }
 
 @media (max-width: 480px) {
-    .content { padding: 1.5rem; }
-    .glitch-text { font-size: 3rem; }
-    .title { 
+    .content {
+        padding: 1.5rem;
+    }
+
+    .glitch-text {
+        font-size: 3rem;
+    }
+
+    .title {
         font-size: 1.4rem;
         letter-spacing: 2px;
     }
-    .tagline { font-size: 1.3rem; }
-    .typing-effect { font-size: 1.6rem; }
+
+    .tagline {
+        font-size: 1.3rem;
+    }
+
+    .typing-effect {
+        font-size: 1.6rem;
+    }
 }

@@ -28,7 +28,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
+
             // Special handling for skills section
             if (entry.target.id === 'skills') {
                 const skillItems = entry.target.querySelectorAll('.group');
@@ -46,7 +46,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 // Observe all sections
 document.querySelectorAll('.section, #skills').forEach((section) => {
     sectionObserver.observe(section);
-    
+
     // Initialize skills items
     if (section.id === 'skills') {
         const skillItems = section.querySelectorAll('.group');
@@ -72,7 +72,7 @@ window.addEventListener('popstate', () => {
         // If no hash, show the hero section
         const hero = document.querySelector('.hero');
         const portfolioContainer = document.querySelector('.portfolio-container');
-        
+
         if (hero && portfolioContainer) {
             portfolioContainer.classList.remove('fade-in');
             portfolioContainer.style.display = 'none';
@@ -107,9 +107,9 @@ function navigateToPage(pageId) {
             targetPage.style.display = 'block';
             // Force reflow
             void targetPage.offsetWidth;
-            
+
             targetPage.classList.add('active');
-            
+
             // Special handling for skills section
             if (pageId === 'skills') {
                 const skillGroups = targetPage.querySelectorAll('.group');
@@ -150,9 +150,9 @@ window.addEventListener('popstate', handleInitialNavigation);
 
 // Ensure this script is included in your HTML or JavaScript file
 document.addEventListener('mousemove', (e) => {
-  const cursor = document.querySelector('.cursor-glow');
-  if (cursor) {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-  }
+    const cursor = document.querySelector('.cursor-glow');
+    if (cursor) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    }
 });
